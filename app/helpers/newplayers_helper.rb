@@ -1,0 +1,2 @@
+module NewplayersHelper
+end
