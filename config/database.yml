@@ -82,6 +82,7 @@ production:
   <<: *default
   database: rubberball_player_production
   username: rubberball_player
+  url: <%= ENV['postgres://jihujuoijmqumc:3f9414f2faa90bcb1d79cfbcec9074b8a5338bfdd916aa3ce550a10d2a7050ac@ec2-3-231-16-122.compute-1.amazonaws.com:5432/da2a36006fiv2f'] %>
   password: <%= ENV['RUBBERBALL_PLAYER_DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
