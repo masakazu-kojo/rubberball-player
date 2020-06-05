@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TweetApp</title>
+    <title>軟式野球選手データ</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +14,9 @@
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("TweetApp", "/newplayers/index") %>
+          <%= link_to("軟式野球注目選手データベース", "/newplayers/index") %>
         <% else %>
-          <%= link_to("TweetApp", "/") %>
+          <%= link_to("軟式野球注目選手データベース", "/") %>
         <% end %>
       </div>
       <ul class="header-menus">
@@ -25,10 +25,10 @@
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
-            <%= link_to("投稿一覧", "/newplayers/index") %>
+            <%= link_to("注目選手一覧", "/newplayers/index") %>
           </li>
           <li>
-            <%= link_to("新規投稿", "/newplayers/new") %>
+            <%= link_to("注目選手投稿", "/newplayers/new") %>
           </li>
           <li>
             <%= link_to("ユーザー一覧", "/users/index") %>
@@ -38,7 +38,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to("TweetAppとは", "/playerdate") %>
+            <%= link_to("注目選手", "/playerdate") %>
           </li>
           <li>
             <%= link_to("新規登録", "/signup") %>
