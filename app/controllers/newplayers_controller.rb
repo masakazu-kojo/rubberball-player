@@ -19,7 +19,7 @@ class NewplayersController < ApplicationController
   def create
     @newplayer = Newplayer.new(content: params[:content],user_id: @current_user.id)
     if @newplayer.save
-      flash[:notice] = "投稿を作成しました"
+      flash[:notice] = "新たな注目選手が参入しました"
       redirect_to("/newplayers/index")
     else
       render("newplayers/new")
@@ -34,7 +34,7 @@ class NewplayersController < ApplicationController
     @newplayer = Newplayer.find_by(id: params[:id])
     @newplayer.content = params[:content]
     if @newplayer.save
-      flash[:notice] = "投稿を編集しました"
+      flash[:notice] = "選手情報を編集しました"
       redirect_to("/newplayers/index")
     else
       render("newplayers/edit")
@@ -44,7 +44,7 @@ class NewplayersController < ApplicationController
   def destroy
     @newplayer = Newplayer.find_by(id: params[:id])
     @newplayer.destroy
-    flash[:notice] = "投稿を削除しました"
+    flash[:notice] = "選手情報を削除しました"
     redirect_to("/newplayers/index")
   end
 
