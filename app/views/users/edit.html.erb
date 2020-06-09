@@ -11,13 +11,16 @@
         <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
         <p>ユーザー名</p>
         <input name="name" value="<%= @user.name %>">  
-        <p>選手名(登録名)</p>
+        <p>登録名(選手名)</p>
+        <input name="name" value="<%= @user.name %>">
         <p>所属チーム</p>
+        <input name="name" value="<%= @user.name %>">
         <p>画像</p>
         <input name="image" type="file"> 
         <p>出身チーム、出身校</p>
+        <input name="name" value="<%= @user.name %>">  
         <p>メールアドレス</p>            
-        <input name="email" value="<%= @user.email %>">            
+        <input name="email" value="<%= @user.email %>">          
         <input type="submit" value="保存">                       
         <% end %>
       </div>
