@@ -15,15 +15,18 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
 development:
-  <<: *default
-  database: rubberball_player_development
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  database: mysql_development
+  username: root
+  password: 
+  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +58,6 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: rubberball_player_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -78,12 +78,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+test:
+  <<: *default
+  database: db/test.sqlite3
+
 production:
   <<: *default
-  database: rubberball_player_production
-  username: rubberball_player
-  url: <%= ENV['postgres://jihujuoijmqumc:3f9414f2faa90bcb1d79cfbcec9074b8a5338bfdd916aa3ce550a10d2a7050ac@ec2-3-231-16-122.compute-1.amazonaws.com:5432/da2a36006fiv2f'] %>
-  password: <%= ENV['RUBBERBALL_PLAYER_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: db/production.sqlite3
