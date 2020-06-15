@@ -62,7 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "pry-rails"
 gem "pry-byebug"
 gem 'bcrypt'
-gem 'carrierwave'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick'
 gem 'sqlite3', '~> 1.3.6'
 gem 'mysql2'
