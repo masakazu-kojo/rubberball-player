@@ -1,7 +1,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
-    <%= form_tag("/newplayers/#{@newplayer.id}/update") do %>
+ <%= form_with model: @newplayer do |f| %>
       <div class="form">
         <div class="form-body">
           <% @newplayer.errors.full_messages.each do |message| %>
@@ -9,12 +9,28 @@
               <%= message %>
             </div>
           <% end %>
-          <p>画像</p>
-          <input name="image" type="file"> 
-          <textarea name="content"><%= @newplayer.content %></textarea>
-          <input type="submit" value="保存">
+          <p>選手名</p>
+          <%= f.text_field :player %>
+          <p>所属チーム名</p>
+          <%= f.text_field :from_team %>
+          <p>出身校、出身チーム</p>
+          <%= f.text_field :before_team %>
+          <p>主なポジション</p>
+          <%= f.select :position,[["投手","投手"],["捕手","捕手"],["一塁手","一塁手"],["二塁手","二塁手"],["三塁手","三塁手"],["遊撃手","遊撃手"],["外野手","外野手"],["その他","その他"]] %>
+          <%= f.label :画像 %><br />
+          <%= f.file_field :img, class: "image" %>
+            <% if @newplayer.img%>
+              <%= image_tag @newplayer.img.url, width: "300px", height: "300px"%>
+            <% else%>
+              <P>画像がありません</P>
+            <% end %>
+          <%= f.label :label do |l| %><%= f.check_box :remove_img %><P>画像を削除する</P> 
+            <% end %>
+          <p>その他選手についての情報</p>
+          <%= f.text_area :content %>
+          <%= f.submit "保存" %>
         </div>
       </div>
-    <% end %>
+    <%end%>
   </div>
 </div>

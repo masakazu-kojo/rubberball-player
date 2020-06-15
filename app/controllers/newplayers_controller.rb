@@ -33,10 +33,9 @@ class NewplayersController < ApplicationController
 
   def update
     @newplayer = Newplayer.find_by(id: params[:id])
-    @newplayer.content = params[:content]
-    if @newplayer.save
-      flash[:notice] = "選手情報を編集しました"
-      redirect_to("/newplayers/index")
+    if @newplayer.update(newplayer_params)
+      flash[:notice] = "選手情報を更新しました"
+      redirect_to("/newplayers")
     else
       render("newplayers/edit")
     end
