@@ -17,10 +17,11 @@ class NewplayersController < ApplicationController
   end
 
   def create
-    @newplayer = Newplayer.new(content: params[:content],user_id: @current_user.id)
+    @newplayer = Newplayer.new(newplayer_params)
+    @newplayer.user_id = @current_user.id
     if @newplayer.save
       flash[:notice] = "新たな注目選手が参入しました"
-      redirect_to("/newplayers/index")
+      redirect_to("/newplayers")
     else
       render("newplayers/new")
     end
@@ -55,10 +56,10 @@ class NewplayersController < ApplicationController
       redirect_to("/newplayers/index")
     end
   end
- 
+
 private
   def newplayer_params
-    params.require(:post).permit(:content, :text, :img, :remove_img)
+    params.require(:newplayer).permit(:content, :text, :img, :remove_img)
   end
 
 end
