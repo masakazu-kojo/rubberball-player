@@ -11,22 +11,13 @@
             </div>
           <% end %>
           <p>選手名</p>
-          <%= f.text_field :plyaer %>
+          <%= f.text_field :player %>
           <p>所属チーム名</p>
-          <%= f.text_field :from %>
+          <%= f.text_field :from_team %>
           <p>出身校、出身チーム</p>
-          <%= f.text_field :before %>
+          <%= f.text_field :before_team %>
           <p>主なポジション</p>
-            <select name="example">
-            <option value="投手">投手</option>
-            <option value="捕手">捕手</option>
-            <option value="一塁手">一塁手</option>
-            <option value="二塁手">二塁手</option>
-            <option value="三塁手">三塁手</option>
-            <option value="遊撃手">遊撃手</option>
-            <option value="外野手">外野手</option>
-            <option value="その他">その他</option>
-          </select>
+          <%= f.select :position,[["投手","投手"],["捕手","捕手"],["一塁手","一塁手"],["二塁手","二塁手"],["三塁手","三塁手"],["遊撃手","遊撃手"],["外野手","外野手"],["その他","その他"]] %>
           <%= f.label :画像 %><br />
           <%= f.file_field :img, class: "image" %>
           <p><%= f.check_box :remove_img %>画像を削除する</p>
