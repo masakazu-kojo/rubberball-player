@@ -55,5 +55,10 @@ class NewplayersController < ApplicationController
       redirect_to("/newplayers/index")
     end
   end
+ 
+private
+  def newplayer_params
+    params.require(:post).permit(:content, :text, :img, :remove_img)
+  end
 
 end

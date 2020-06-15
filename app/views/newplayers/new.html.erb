@@ -1,3 +1,4 @@
+<%= render 'form'%>
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">注目選手について入力</h1>
@@ -28,7 +29,6 @@
             <option value="その他">その他</option>
           </select>
           <p>画像</p>
-          <input name="image" type="file"> 
           <p>その他選手についての情報</p>
           <textarea name="content"><%= @newplayer.content %></textarea>
           <input type="submit" value="投稿">
