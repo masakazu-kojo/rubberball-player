@@ -52,7 +52,7 @@ class NewplayersController < ApplicationController
     @newplayer = Newplayer.find_by(id: params[:id])
     if @newplayer.user_id != @current_user.id
       flash[:notice] = "権限がありません"
-      redirect_to("/newplayers/index")
+      redirect_to("/newplayers")
     end
   end
 
