@@ -22,7 +22,7 @@
       <% if @newplayer.user_id == @current_user.id%>
        <div class="post-menus">
         <%= link_to("編集", "/newplayers/#{@newplayer.id}/edit") %>
-        <%= link_to("削除", "/newplayers/#{@newplayer.id}/destroy", {method: "post"}) %>
+        <%= link_to("削除", "/newplayers/#{@newplayer.id}/destroy", {method: "delete"}) %>
       </div>
      <% end%>
     </div>

@@ -45,7 +45,7 @@ class NewplayersController < ApplicationController
     @newplayer = Newplayer.find_by(id: params[:id])
     @newplayer.destroy
     flash[:notice] = "選手情報を削除しました"
-    redirect_to("/newplayers/index")
+    redirect_to("/newplayers")
   end
 
   def ensure_correct_user

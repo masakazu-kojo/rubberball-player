@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # post "newplayers/create" => "newplayers#create"
   # get "newplayers/:id/edit" => "newplayers#edit"
   # post "newplayers/:id/update" => "newplayers#update"
-  # post "newplayers/:id/destroy" => "newplayers#destroy"
+  delete "newplayers/:id/destroy" => "newplayers#destroy"
 
   get "/" => "home#top"
   get "playerdate" => "home#playerdate"
