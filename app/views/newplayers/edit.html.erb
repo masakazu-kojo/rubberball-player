@@ -17,7 +17,8 @@
           <%= f.text_field :before_team %>
           <p>主なポジション</p>
           <%= f.select :position,[["投手","投手"],["捕手","捕手"],["一塁手","一塁手"],["二塁手","二塁手"],["三塁手","三塁手"],["遊撃手","遊撃手"],["外野手","外野手"],["その他","その他"]] %>
-          <%= f.label :画像 %><br />
+          <br />
+          <%= f.label :画像 %>
           <%= f.file_field :img, class: "image" %>
             <% if @newplayer.img%>
               <%= image_tag @newplayer.img.url, width: "300px", height: "300px"%>
