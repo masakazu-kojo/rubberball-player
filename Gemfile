@@ -66,4 +66,5 @@ gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick'
 gem 'sqlite3', '~> 1.3.6'
 gem 'mysql2'
+gem 'jquery-rails'
 
