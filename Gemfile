@@ -67,4 +67,6 @@ gem 'mini_magick'
 gem 'sqlite3', '~> 1.3.6'
 gem 'mysql2'
 gem 'jquery-rails'
+gem 'haml-rails'
+gem 'erb2haml'
 

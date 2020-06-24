@@ -1,0 +1,33 @@
+!!!
+%html
+  %body
+    .main.posts-new
+      .container
+        %h1.form-heading 編集する
+        = form_with model: @newplayer do |f|
+          .form
+            .form-body
+              - @newplayer.errors.full_messages.each do |message|
+                .form-error
+                  = message
+              %p 選手名
+              = f.text_field :player
+              %p 所属チーム名
+              = f.text_field :from_team
+              %p 出身校、出身チーム
+              = f.text_field :before_team
+              %p 主なポジション
+              = f.select :position,[["投手","投手"],["捕手","捕手"],["一塁手","一塁手"],["二塁手","二塁手"],["三塁手","三塁手"],["遊撃手","遊撃手"],["外野手","外野手"],["その他","その他"]]
+              %br/
+              = f.label :画像
+              = f.file_field :img, class: "image"
+              - if @newplayer.img
+                = image_tag @newplayer.img.url, width: "300px", height: "300px"
+              - else
+                %p 画像がありません
+              = f.label :label do |l|
+                = f.check_box :remove_img
+                %p 画像を削除する
+              %p その他選手についての情報
+              = f.text_area :content
+              = f.submit "保存"
