@@ -1,0 +1,19 @@
+.main.posts-show
+  .container
+    .posts-show-item
+      .post-user-name
+      %p
+        = @newplayer.content
+      .post-time
+        = @newplayer.created_at
+      - if Like.find_by(user_id: @current_user.id, newplayer_id: @newplayer.id)
+        = link_to("/likes/#{@newplayer.id}/destroy", {method:"post"}) do
+          %span.fa.fa-heart.like-btn-unlike
+      - else
+        = link_to("/likes/#{@newplayer.id}/create", {method:"post"}) do
+          %span.fa.fa-heart.like-btn
+      = @likes_count
+      - if @newplayer.user_id == @current_user.id
+        .post-menus
+          = link_to("編集", "/newplayers/#{@newplayer.id}/edit")
+          = link_to("削除", "/newplayers/#{@newplayer.id}/destroy", {method: "delete"})

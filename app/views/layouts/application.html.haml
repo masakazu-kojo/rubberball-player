@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title 軟式野球選手データ
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+  %body
+    %header
+      .header-logo
+        - if @current_user
+          = link_to("軟式野球注目選手データベース", "/newplayers")
+        - else
+          = link_to("軟式野球注目選手データベース", "/")
+      %ul.header-menus
+        - if @current_user
+          %li
+            = link_to(@current_user.name, "/users/#{@current_user.id}")
+          %li
+            = link_to("注目選手一覧", "/newplayers")
+          %li
+            = link_to("注目選手投稿", "/newplayers/new")
+          %li
+            = link_to("ユーザー一覧", "/users/index")
+          %li
+            = link_to("ログアウト", "/logout", {method: :newplayer})
+        - else
+          %li
+            = link_to("注目選手", "/playerdate")
+          %li
+            = link_to("新規登録", "/signup")
+          %li
+            = link_to("ログイン", "/login")
+    - if flash[:notice]
+      .flash
+        = flash[:notice]
+    = yield
