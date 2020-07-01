@@ -21,6 +21,7 @@
               %br/
               = f.label :画像
               = f.file_field :img, class: "image"
+              = javascript_include_tag "newplayers.js"
               - if @newplayer.img
                 = image_tag @newplayer.img.url, width: "300px", height: "300px"
               - else
