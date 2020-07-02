@@ -23,5 +23,5 @@ Things you may want to cover:
 
 * ...
 
-Readme
+軟式野球選手データベース 〜あなたが知らない凄い選手を見つけよう〜
 
