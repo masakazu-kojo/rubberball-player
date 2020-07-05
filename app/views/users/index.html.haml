@@ -4,8 +4,6 @@
     - @users.each do |user|
       .users-index-item
         .user-left
-          / <img>タグを用いて、プロフィール画像を表示してください
           %img{:src => "/user_images/#{user.image_name}"}/
         .user-right
-          / 以下のユーザー名を、ユーザー詳細ページへのリンクに書き換えてください
           = link_to(user.name, "/users/#{user.id}")
