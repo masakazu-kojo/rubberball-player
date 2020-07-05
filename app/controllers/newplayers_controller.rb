@@ -58,7 +58,7 @@ class NewplayersController < ApplicationController
 
 private
   def newplayer_params
-    params.require(:newplayer).permit(:player, :from_team, :before_team, :position, :content, :text, :img, :remove_img)
+    params.require(:newplayer).permit(:player, :from_team, :before_team, :position, :content, :text, :img)
   end
 
 end
