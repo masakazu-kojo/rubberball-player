@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post "likes/:newplayer_id/create" => "likes#create"
   post "likes/:newplayer_id/destroy" => "likes#destroy"
   #ユーザー
-
+  
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   # post "newplayers/:id/update" => "newplayers#update"
   delete "newplayers/:id/destroy" => "newplayers#destroy"
 
-  get "/" => "home#top"
+  root "home#top"
   get "playerdate" => "home#playerdate"
 end
