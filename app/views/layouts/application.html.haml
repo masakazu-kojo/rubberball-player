@@ -23,7 +23,7 @@
           %li
             = link_to("注目選手投稿", "/newplayers/new")
           %li
-            = link_to("ログアウト", "/logout", {method: :newplayer})
+            = link_to("ログアウト", "/logout", {method: :post})
         - else
           %li
             = link_to("新規登録", "/signup")
