@@ -12,10 +12,10 @@
                   = message
               = f.label :画像
               = f.file_field :img, class: "image"
-              - if @newplayer.img
+              - if @newplayer.img.present?
                 = image_tag @newplayer.img.url, width: "300px", height: "300px"
               - else
-                %p 画像無し
+                %p 画像ありません
               %p 選手名
               = f.text_field :player
               %p 所属チーム名
