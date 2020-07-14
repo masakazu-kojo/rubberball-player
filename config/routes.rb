@@ -14,14 +14,8 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
   get "users/:id/likes" => "users#likes"
 
-  #新選手の投稿
+  #新選手の投稿(postメソッド)
   resources :newplayers
-  # get "newplayers/index" => "newplayers#index"
-  # get "newplayers/new" => "newplayers#new"
-  # get "newplayers/:id" => "newplayers#show"
-  # post "newplayers/create" => "newplayers#create"
-  # get "newplayers/:id/edit" => "newplayers#edit"
-  # post "newplayers/:id/update" => "newplayers#update"
   delete "newplayers/:id/destroy" => "newplayers#destroy"
 
   root "home#top"
