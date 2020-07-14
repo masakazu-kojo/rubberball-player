@@ -25,6 +25,7 @@ Things you may want to cover:
 
 軟式野球選手データベース 〜あなたが知らない凄い選手を見つけよう〜
 
-Readme
+class NewplayersController < ApplicationController
+  before_action :authenticate_user
+  before_action :ensure_correct_user,{only: [:edit, :update, :destroy]}
 
-Readme  
