@@ -1,7 +1,7 @@
 .main.user-show
   .container
     .user
-      %img{:src => "/user_images/#{@user.image_name}"}/
+      %img{:src => "/user_images/#{@user.image_name}"}
       %h2= @user.name
       %p= @user.email
       - if @user.id == @current_user.id
@@ -13,7 +13,7 @@
       - newplayer = Newplayer.find_by(id: like.newplayer_id)
       .posts-index-item
         .post-left
-          %img{:src => "/user_images/#{newplayer.user.image_name}"}/
+          %img{:src => "/user_images/#{newplayer.user.image_name}"}
         .post-right
           .post-user-name
             = link_to(newplayer.user.name, "/users/#{newplayer.user.id}")
